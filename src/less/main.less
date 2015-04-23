@@ -1,0 +1,39 @@
+@link-color: rgb(170,0,0);
+
+html {
+  height: 101%;
+}
+
+body {
+  background-color: rgb(250,250,250);
+}
+
+a {
+  color: @link-color;
+  &:hover {
+    color: @link-color;
+    text-decoration: none;
+  }
+}
+
+.content-box {
+  background-color: white;
+  border: 1px solid rgb(207,207,207);
+  margin: 15px 0;
+  padding: 15px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: @link-color;
+  &:hover {
+    color: @link-color;
+  }
+}
+
+.navbar-default .navbar-nav > .active > a {
+  color: @link-color;
+  background-color: rgb(255,235,205);
+  &:hover {
+    color: @link-color;
+  }
+}
