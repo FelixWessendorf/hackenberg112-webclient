@@ -1,6 +1,12 @@
 (function () {
     'use strict';
 
+    $(function(){
+        $('body')
+            .on('click','a',function(event){ $(event.currentTarget).blur()})
+            .on('click','*:button',function(event){ $(event.currentTarget).blur()})
+    });
+
     var app = angular.module('app', ['ngRoute']);
 
     app.config(
