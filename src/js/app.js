@@ -26,7 +26,8 @@
                     templateUrl: 'templates/einsaetze.html'
                 }).
                 when('/personal', {
-                    templateUrl: 'templates/personal.html'
+                    templateUrl: 'templates/personal.html',
+                    controller: 'PersonnelController'
                 }).
                 when('/ausruestung', {
                     templateUrl: 'templates/ausruestung.html'

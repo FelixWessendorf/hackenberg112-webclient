@@ -1,20 +1,7 @@
 <h1>Personal</h1>
 <p>In unserem Löschzug sind derzeit n Kameraden und Kameradinnen aktiv.</p>
 <ul>
-    <li>Herr A. Nachname (Dienstgrad)</li>
-    <li>Herr A. Nachname (Dienstgrad)</li>
-    <li>Herr A. Nachname (Dienstgrad)</li>
-    <li>Herr A. Nachname (Dienstgrad)</li>
-    <li>Herr A. Nachname (Dienstgrad)</li>
-    <li>Herr A. Nachname (Dienstgrad)</li>
-    <li>Herr A. Nachname (Dienstgrad)</li>
-    <li>Herr A. Nachname (Dienstgrad)</li>
-    <li>Herr A. Nachname (Dienstgrad)</li>
-    <li>Herr A. Nachname (Dienstgrad)</li>
-    <li>Herr A. Nachname (Dienstgrad)</li>
-    <li>Herr A. Nachname (Dienstgrad)</li>
-    <li>Herr A. Nachname (Dienstgrad)</li>
-    <li>Herr A. Nachname (Dienstgrad)</li>
+    <li data-ng-repeat="person in persons">{{person.sex=='f'?'Frau':'Herr'}} {{person.firstName}} {{person.lastName}} ({{person.rank.name}})</li>
 </ul>
 <p>Das Durchschnittsalter unseres Personals beträgt %.2f Jahre bei einer durchschnittlichen Dienstzeit von %.2f Jahren.</p>
 <p>Durchschnittlicher Ausbildungsgrad unserer Einheit: Unterbrandmeister / Unterbrandmeisterin.</p>
