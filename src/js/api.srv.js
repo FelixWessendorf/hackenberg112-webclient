@@ -31,6 +31,9 @@
         this.person = {
             listAll: function(){
                 return call('Person','ListAll');
+            },
+            getStatistics: function(){
+                return call('Person','GetStatistics');
             }
         };
 

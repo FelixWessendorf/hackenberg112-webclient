@@ -1,10 +1,12 @@
 <h1>Personal</h1>
-<p>In unserem Löschzug sind derzeit n Kameraden und Kameradinnen aktiv.</p>
+<p>In unserem Löschzug sind derzeit {{persons.length}} Kameraden und Kameradinnen aktiv.</p>
 <ul>
-    <li data-ng-repeat="person in persons">{{person.sex=='f'?'Frau':'Herr'}} {{person.firstName}} {{person.lastName}} ({{person.rank.name}})</li>
+    <li data-ng-repeat="person in persons">{{person.sex=='f'?'Frau':'Herr'}} {{person.firstName}} {{person.lastName}} <br class="visible-xs-inline"> <span class="small">({{person.rank.name}})</span></li>
 </ul>
-<p>Das Durchschnittsalter unseres Personals beträgt %.2f Jahre bei einer durchschnittlichen Dienstzeit von %.2f Jahren.</p>
-<p>Durchschnittlicher Ausbildungsgrad unserer Einheit: Unterbrandmeister / Unterbrandmeisterin.</p>
+<div data-ng-if="statistics.length>0">
+  <p>Das Durchschnittsalter unseres Personals beträgt {{statistics[0]|number:2}} Jahre bei einer durchschnittlichen Dienstzeit von {{statistics[1]|number:2}} Jahren.</p>
+  <p>Durchschnittlicher Ausbildungsgrad unserer Einheit: {{statistics[2]}}.</p>
+</div>
 <p>
     <img src="img/mannschaft.jpg" alt="Mannschaft" class="img-responsive">
 </p>
