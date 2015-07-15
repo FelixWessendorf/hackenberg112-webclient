@@ -1,1 +1,19 @@
 <h1>Liste bisheriger Zugführer</h1>
+
+<p>Folgende Feuerwehrmänner leiteten bisher die Freiwillige Feuerwehr Hackenberg-Leienbach und den Löschzug IV der Freiwilligen Feuerwehr der Stadt Bergneustadt als Feuerwehrhauptmann, Wehrführer, Brandmeister oder Löschzugführer. Ihre Stellung war stets getragen von eigenem feuerwehrtechnischem Können und dem Vertrauen der Kameraden:</p>
+
+<div class="row">
+    <div class="col-xs-6 col-sm-4">Von<span class="visible-xs-inline"> / Bis</span></div>
+    <div class="col-xs-6 col-sm-4 col-sm-push-4">Leiter</div>
+    <div class="hidden-xs col-sm-4 col-sm-pull-4">Bis</div>
+</div>
+<hr>
+
+<div data-ng-repeat="chief in chiefs">
+    <div class="row">
+        <div class="col-xs-6 col-sm-4">{{chief.from}}</div>
+        <div class="col-xs-6 col-sm-4 col-sm-push-4 chief-name">{{chief.name}}</div>
+        <div class="col-xs-12 col-sm-4 col-sm-pull-4">{{chief.to}}</div>
+    </div>
+    <hr data-ng-if="!$last">
+</div>

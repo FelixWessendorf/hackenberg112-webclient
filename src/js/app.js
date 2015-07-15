@@ -42,7 +42,8 @@
                     templateUrl: 'templates/chronik/geschichte-der-feuerwehr-hackenberg-leienbach.html'
                 }).
                 when('/chronik/liste-bisheriger-zugfuehrer', {
-                    templateUrl: 'templates/chronik/liste-bisheriger-zugfuehrer.html'
+                    templateUrl: 'templates/chronik/liste-bisheriger-zugfuehrer.html',
+                    controller: 'ListOfChiefsController'
                 }).
                 when('/impressum', {
                     templateUrl: 'templates/impressum.html'
