@@ -36,7 +36,8 @@
                     templateUrl: 'templates/mitmachen.html'
                 }).
                 when('/chronik', {
-                    templateUrl: 'templates/chronik.html'
+                    templateUrl: 'templates/chronik.html',
+                    controller: 'ChronicleController'
                 }).
                 when('/chronik/geschichte-der-feuerwehr-hackenberg-leienbach', {
                     templateUrl: 'templates/chronik/geschichte-der-feuerwehr-hackenberg-leienbach.html'

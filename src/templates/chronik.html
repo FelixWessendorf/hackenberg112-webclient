@@ -1,3 +1,17 @@
 <h1>Chronik</h1>
-<a href="chronik/geschichte-der-feuerwehr-hackenberg-leienbach">Geschichte der Feuerwehr Hackenberg-Leienbach</a><br>
-<a href="chronik/liste-bisheriger-zugfuehrer">Liste bisheriger Zugführer</a>
+
+<ul>
+    <li><a href="chronik/geschichte-der-feuerwehr-hackenberg-leienbach">Geschichte der Feuerwehr Hackenberg-Leienbach</a></li>
+    <li><a href="chronik/liste-bisheriger-zugfuehrer">Liste bisheriger Zugführer</a></li>
+</ul>
+
+<h2>Bilder der Vergangenheit</h2>
+
+<div class="chronicle-thumb-container">
+
+    <div class="chronicle-thumb" data-ng-repeat="image in images">
+        <a href="/img/lightbox-ico-loading.gif" data-ng-href="{{image.fullImage}}"><img src="" data-ng-src="{{image.thumbImage}}" width="150" height="100" alt="{{image.description}}" class="img-thumbnail"></a><br>
+        {{image.description}}
+    </div>
+
+</div>
