@@ -67,25 +67,34 @@
 
 
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <div class="content-box">
                         <div data-ng-view data-autoscroll></div>
                     </div>
                 </div>
-                <div class="col-md-4 col-md-right">
+                <div class="col-md-3 col-md-right">
                     <div class="content-box">
-                        <div data-ng-controller="LatestOperationsController">
+                        <div class="latest-operation" data-ng-controller="LatestOperationsController">
                             <h2>Letzte Einsätze</h2>
-                            <ul class="list-unstyled" data-ng-if="latestOperations">
-                                <li data-ng-repeat="operation in latestOperations">{{operation.date*1000 | date:'dd.MM.yyyy'}}: {{operation.description}} </li>
-                            </ul>
+                            <table data-ng-if="latestOperations">
+                                <tr data-ng-repeat="operation in latestOperations">
+                                    <th>{{operation.date*1000 | date:'dd.MM.yyyy'}}:</th>
+                                    <td>{{operation.description}}</td>
+                                </tr>
+                            </table>
                             <p data-ng-if="latestOperations">
-                              Der letzte Einsatz war <span data-ng-if="today">heute</span><span data-ng-if="!today" am-time-ago="latestDate"></span>.
+                              Der letzte Einsatz war <span data-ng-if="today">heute</span><span data-ng-if="!today" data-am-time-ago="latestDate"></span>.
                             </p>
                         </div>
-                        <div data-ng-controller="MonthlyServiceController">
+                        <div class="monthly-service" data-ng-controller="MonthlyServiceController">
                             <h2>Monatsdienst</h2>
-                            <span data-ng-repeat="person in currentlyOnDuty">{{person.firstName}} {{person.lastName}}{{!$last?', ':''}}</span>
+                            <span data-ng-repeat="person in currentlyOnDuty">{{person.firstName}} {{person.lastName}}{{!$last?', ':''}}</span><br>
+                            <a data-ng-href="{{apiEndpointUrl()}}/documents/reinigungsplan.pdf">Reinigungsplan</a>
+                        </div>
+                        <div class="retten-loeschen-bergen-schuetzen">
+                            <img src="img/retten-loeschen-bergen-schuetzen.png" width="96" height="96" alt="Retten Löschen Bergen Schützen"><br>
+                            Retten Löschen<br>
+                            Bergen Schützen
                         </div>
                     </div>
                 </div>

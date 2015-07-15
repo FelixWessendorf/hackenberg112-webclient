@@ -37,6 +37,10 @@
             }
         };
 
+        this.apiEndpointUrl = function(){
+            return apiEndpointUrl;
+        };
+
         var call = function(className,methodName,parameters){
             parameters = parameters || [];
             var deferred = $q.defer();

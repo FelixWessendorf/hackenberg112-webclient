@@ -10,6 +10,10 @@
             $scope.currentlyOnDuty = currentlyOnDuty;
         });
 
+        $scope.apiEndpointUrl = function(){
+            return apiService.apiEndpointUrl();
+        };
+
     }]);
 
 
