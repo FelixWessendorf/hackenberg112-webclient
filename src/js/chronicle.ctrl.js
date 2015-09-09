@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('app').controller('ChronicleController',['$scope',function($scope){
+    angular.module('app').controller('ChronicleController',['$scope','$modal',function($scope,$modal){
 
         $scope.images = [
             {thumbImage:'img/chronik/fahrzeuge-1994-thumb.jpg', fullImage:'img/chronik/fahrzeuge-1994.jpg', description:'Fahrzeuge 1994'},
@@ -14,6 +14,24 @@
             {thumbImage:'img/chronik/geraetehaus-loehstrasse-bis-1955-thumb.jpg', fullImage:'img/chronik/geraetehaus-loehstrasse-bis-1955.jpg', description:'Gerätehaus Löhstraße bis 1955'},
             {thumbImage:'img/chronik/handdruckspritze-1898-thumb.jpg', fullImage:'img/chronik/handdruckspritze-1898.jpg', description:'Handdruckspritze 1898'}
         ];
+
+        var image = null;
+        $scope.image = function(value){
+            if(arguments.length==0) return image;
+            image = value;
+        };
+
+        $scope.showImage = function(event,image){
+            $scope.image(image);
+            event.preventDefault();
+            $modal.open({
+                animation: true,
+                templateUrl: 'templates/image-modal.html',
+                controller: 'ImageModalController',
+                scope: $scope,
+                size: 'lg'
+            });
+        };
 
     }]);
 

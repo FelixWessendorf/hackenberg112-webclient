@@ -7,7 +7,7 @@
             .on('click','*:button',function(event){ $(event.currentTarget).blur()})
     });
 
-    var app = angular.module('app', ['ngRoute','angularMoment']);
+    var app = angular.module('app', ['ngRoute','angularMoment','ui.bootstrap']);
 
     app.config(
 

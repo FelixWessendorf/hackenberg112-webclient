@@ -10,7 +10,7 @@
 <div class="chronicle-thumb-container">
 
     <div class="chronicle-thumb" data-ng-repeat="image in images">
-        <a href="/img/lightbox-ico-loading.gif" data-ng-href="{{image.fullImage}}"><img src="" data-ng-src="{{image.thumbImage}}" width="150" height="100" alt="{{image.description}}" class="img-thumbnail"></a><br>
+        <a href="/img/lightbox-ico-loading.gif" data-ng-href="{{image.fullImage}}" data-ng-click="showImage($event,image)"><img src="" data-ng-src="{{image.thumbImage}}" width="150" height="100" alt="{{image.description}}" class="img-thumbnail"></a><br>
         {{image.description}}
     </div>
 
