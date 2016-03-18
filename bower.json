@@ -1,0 +1,23 @@
+{
+  "name": "hackenberg112-webclient",
+  "version": "0.1.0",
+  "description": "Webclient der Internetseite www.hackenberg112.de",
+  "main": "src/index.html",
+  "keywords": [
+    "feuerwehr",
+    "bergneustadt",
+    "hackenberg"
+  ],
+  "homepage": "https://github.com/FelixWessendorf/hackenberg112-webclient",
+  "devDependencies": {
+    "angular": "^1.5.1",
+    "angular-route": "^1.5.1",
+    "bootstrap": "^3.3.6",
+    "underscore": "^1.8.3",
+    "less": "^2.6.1",
+    "moment": "^2.12.0",
+    "angular-moment": "^0.10.3",
+    "angular-i18n": "^1.5.1",
+    "angular-bootstrap": "^1.2.4"
+  }
+}

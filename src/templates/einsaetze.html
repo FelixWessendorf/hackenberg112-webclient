@@ -1,1 +1,14 @@
 <h1>Einsätze</h1>
+
+<p>Auf dieser Seite sind vergangene Einsätze des Löschzugs ab 2013 aufgelistet um einen Einblick in unsere Arbeit
+    zu geben. Bitte beachten Sie, dass wir die Vollständigkeit und Aktualität dieser Auflistung leider nicht
+    uneingeschränkt gewährleisten können. </p>
+
+<div data-ng-repeat="year in years">
+    <h2>{{year}}</h2>
+    <ul>
+        <li data-ng-repeat="operation in operationsForYear(year)">
+            {{operation.date*1000 | date:'dd.MM.yyyy'}}: {{operation.description}}
+        </li>
+    </ul>
+</div>

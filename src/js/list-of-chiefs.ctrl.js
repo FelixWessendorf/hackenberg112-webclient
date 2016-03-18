@@ -15,7 +15,8 @@
             {from: '20.01.1963', to: '16.10.1969', name: 'Erich Bockemühl'},
             {from: '17.10.1969', to: '02.03.1996', name: 'Horst Keller'},
             {from: '03.03.1996', to: '15.03.2003', name: 'Johann Hanke'},
-            {from: '16.03.2003', to: 'heute', name: 'Stefan Brand'}
+            {from: '16.03.2003', to: '12.03.2016', name: 'Stefan Brand'},
+            {from: '12.03.2016', to: 'heute', name: 'Stephan Hatzig'}
         ];
 
     }]);

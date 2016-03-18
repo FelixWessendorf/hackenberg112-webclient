@@ -19,6 +19,9 @@
         this.operation = {
             loadLatest5: function(){
                 return call('Operation','LoadLatest5');
+            },
+            loadOperations: function(){
+                return call('Operation','LoadOperations');
             }
         };
 

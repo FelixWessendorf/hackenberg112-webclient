@@ -2,10 +2,10 @@
 
     'use strict';
 
-    angular.module('app').controller('ImageModalController',['$scope','$modalInstance',function($scope,$modalInstance){
+    angular.module('app').controller('ImageModalController',['$scope','$uibModalInstance',function($scope,$uibModalInstance){
 
         $scope.close = function(){
-            $modalInstance.dismiss();
+            $uibModalInstance.dismiss();
         };
 
     }]);

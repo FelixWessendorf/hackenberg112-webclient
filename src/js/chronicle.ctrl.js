@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('app').controller('ChronicleController',['$scope','$modal',function($scope,$modal){
+    angular.module('app').controller('ChronicleController',['$scope','$uibModal',function($scope,$uibModal){
 
         $scope.images = [
             {thumbImage:'img/chronik/fahrzeuge-1994-thumb.jpg', fullImage:'img/chronik/fahrzeuge-1994.jpg', description:'Fahrzeuge 1994'},
@@ -24,7 +24,7 @@
         $scope.showImage = function(event,image){
             $scope.image(image);
             event.preventDefault();
-            $modal.open({
+            $uibModal.open({
                 animation: true,
                 templateUrl: 'templates/image-modal.html',
                 controller: 'ImageModalController',

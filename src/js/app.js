@@ -20,10 +20,12 @@
                     templateUrl: 'templates/startseite.html'
                 }).
                 when('/termine', {
-                    templateUrl: 'templates/termine.html'
+                    templateUrl: 'templates/termine.html',
+                    controller: 'AppointmentsController'
                 }).
                 when('/einsaetze', {
-                    templateUrl: 'templates/einsaetze.html'
+                    templateUrl: 'templates/einsaetze.html',
+                    controller: 'OperationsController'
                 }).
                 when('/personal', {
                     templateUrl: 'templates/personal.html',
