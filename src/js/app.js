@@ -17,7 +17,8 @@
 
             $routeProvider.
                 when('/', {
-                    templateUrl: 'templates/startseite.html'
+                    templateUrl: 'templates/startseite.html',
+                    controller: 'HomePageController'
                 }).
                 when('/termine', {
                     templateUrl: 'templates/termine.html',
@@ -47,6 +48,10 @@
                 when('/chronik/liste-bisheriger-zugfuehrer', {
                     templateUrl: 'templates/chronik/liste-bisheriger-zugfuehrer.html',
                     controller: 'ListOfChiefsController'
+                }).
+                when('/tag-der-offenen-tuer-2014', {
+                    templateUrl: 'templates/tag-der-offenen-tuer-2014.html',
+                    controller: 'OpenDoorDay2014Controller'
                 }).
                 when('/impressum', {
                     templateUrl: 'templates/impressum.html'
