@@ -115,6 +115,7 @@ module.exports = function (grunt) {
                     {src: 'src/.htaccess', dest: 'dist/.htaccess'},
                     {src: 'src/img/*', dest: 'dist/img', expand: true, flatten: true},
                     {src: 'src/img/chronik/*', dest: 'dist/img/chronik', expand: true, flatten: true},
+                    {src: 'src/img/tag-der-offenen-tuer-2014/*', dest: 'dist/img/tag-der-offenen-tuer-2014', expand: true, flatten: true},
                     {src: 'src/fonts/*', dest: 'dist/fonts', expand: true, flatten: true}
                 ]
             }
