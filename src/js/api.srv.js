@@ -48,11 +48,11 @@
             parameters = parameters || [];
             var deferred = $q.defer();
             $http.post(apiEndpointUrl,{className:className,methodName:methodName,parameters:parameters},httpConfig).
-                success(function(data){
-                    if(data.errors.length==0) deferred.resolve(data.result);
-                    else deferred.reject(data.errors);
+                then(function(data){
+                    if(data.data.errors.length==0) deferred.resolve(data.data.result);
+                    else deferred.reject(data.data.errors);
                 }).
-                error(function(data,status,headers,config){
+                catch(function(data,status,headers,config){
                     console.log(data,status,headers,config);
                     alert('Fehler bei der Kommunikation mit dem Server.\nBitte versuchen Sie es später noch einmal.');
                 });

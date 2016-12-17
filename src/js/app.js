@@ -4,14 +4,17 @@
     $(function(){
         $('body')
             .on('click','a',function(event){ $(event.currentTarget).blur()})
-            .on('click','*:button',function(event){ $(event.currentTarget).blur()})
+            .on('click','*:button',function(event){ $(event.currentTarget).blur()});
+        $(document).on("click",".navbar-collapse.in",function(a){$(a.target).is("a")&&"dropdown-toggle"!=$(a.target).attr("class")&&$(this).collapse("hide")});
     });
 
     var app = angular.module('app', ['ngRoute','angularMoment','ui.bootstrap']);
 
     app.config(
 
-        ['$routeProvider','$locationProvider',function($routeProvider,$locationProvider) {
+        ['$routeProvider','$locationProvider','$qProvider',function($routeProvider,$locationProvider,$qProvider) {
+
+            $qProvider.errorOnUnhandledRejections(false);
 
             $locationProvider.html5Mode(true);
 

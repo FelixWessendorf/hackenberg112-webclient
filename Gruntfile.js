@@ -103,7 +103,6 @@ module.exports = function (grunt) {
         copy: {
             dist: {
                 files: [
-                    {src: 'src/bower_components/less/dist/less.min.js', dest: 'dist/js/less.min.js'},
                     {src: 'src/bower_components/underscore/underscore-min.js', dest: 'dist/js/underscore-min.js'},
                     {src: 'src/bower_components/jquery/dist/jquery.min.js', dest: 'dist/js/jquery.min.js'},
                     {src: 'src/bower_components/angular/angular.min.js', dest: 'dist/js/angular.min.js'},
