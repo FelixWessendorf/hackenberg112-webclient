@@ -7,8 +7,7 @@
 
         $scope.activeItem = function(){
             return $location.path().split('/')[1];
-        }
-
+        };
 
     }]);
 

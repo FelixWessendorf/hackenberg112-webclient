@@ -3,18 +3,21 @@
 
     $(function(){
         $('body')
-            .on('click','a',function(event){ $(event.currentTarget).blur()})
-            .on('click','*:button',function(event){ $(event.currentTarget).blur()});
-        $(document).on("click",".navbar-collapse.in",function(a){$(a.target).is("a")&&"dropdown-toggle"!=$(a.target).attr("class")&&$(this).collapse("hide")});
+            .on('click','a',function(event){ $(event.currentTarget).blur();})
+            .on('click','*:button',function(event){ $(event.currentTarget).blur();});
+    });
+
+    $(document).on('click','.navbar-collapse.in',function(e) {
+        if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
+            $(this).collapse('hide');
+        }
     });
 
     var app = angular.module('app', ['ngRoute','angularMoment','ui.bootstrap']);
 
     app.config(
 
-        ['$routeProvider','$locationProvider','$qProvider',function($routeProvider,$locationProvider,$qProvider) {
-
-            $qProvider.errorOnUnhandledRejections(false);
+        ['$routeProvider','$locationProvider',function($routeProvider,$locationProvider) {
 
             $locationProvider.html5Mode(true);
 

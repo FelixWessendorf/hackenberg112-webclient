@@ -22,7 +22,7 @@
 
         var image = null;
         $scope.image = function(value){
-            if(arguments.length==0) return image;
+            if(arguments.length===0) return image;
             image = value;
         };
 

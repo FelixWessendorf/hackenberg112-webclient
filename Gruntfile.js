@@ -153,7 +153,6 @@ module.exports = function (grunt) {
                             'dist/js/angular-moment.min.js',
                             'dist/js/bootstrap.min.js',
                             'dist/js/ui-bootstrap-tpls.min.js',
-                            'dist/js/less.min.js',
                             'dist/js/app.min.js',
                             'dist/js/api.srv.min.js',
                             'dist/js/*.min.js'],
@@ -171,13 +170,26 @@ module.exports = function (grunt) {
                     }
                 ]
             }
-        }
+        }/*,
+
+        jshint: {
+            options: {
+                reporter: require('jshint-stylish'),
+                eqeqeq: true,
+                strict: true,
+                eqnull: true
+            },
+
+            beforeconcat: ['Gruntfile.js', 'src/js/!*.js'],
+            afterconcat: ['dist/main.min.js']
+        }*/
 
     });
 
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-less');
@@ -188,7 +200,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-text-replace');
 
     grunt.registerTask('run', ['connect:run','watch:run']);
-    grunt.registerTask('dist', ['clean:pre','processhtml','htmlmin','less','uglify','copy','cssmin','replace','concat','clean:post']);
+    grunt.registerTask('dist', ['clean:pre','processhtml','htmlmin','less','uglify','copy','cssmin','replace','concat',/*'jshint',*/'clean:post']);
     grunt.registerTask('distTest', ['connect:dist']);
 
 };

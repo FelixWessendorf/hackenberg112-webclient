@@ -14,9 +14,9 @@
             apiService.person.listAll().then(function(thePersons){
                 $scope.persons = persons = thePersons;
             });
-        };
+        }
         
-        if(statistics==null){
+        if(statistics===null){
             apiService.person.getStatistics().then(function(theStatistics){
                 $scope.statistics = statistics = theStatistics;
             });
