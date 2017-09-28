@@ -49,7 +49,7 @@ module.exports = function (grunt) {
         processhtml: {
             dist: {
                 cwd: 'src',
-                src: ['**/**.html','!bower_components/**'],
+                src: ['**/**.html'],
                 dest: 'dist',
                 expand: true
             }
@@ -93,9 +93,7 @@ module.exports = function (grunt) {
                                 drop_console: true
                             }
                         }
-                    },
-                    {src: 'src/bower_components/angular-i18n/angular-locale_de-de.js', dest: 'dist/js/angular-locale_de-de.min.js'},
-                    {src: 'src/bower_components/moment/locale/de.js', dest: 'dist/js/de.min.js'}
+                    }
                 ]
             }
         },
@@ -103,15 +101,8 @@ module.exports = function (grunt) {
         copy: {
             dist: {
                 files: [
-                    {src: 'src/bower_components/underscore/underscore-min.js', dest: 'dist/js/underscore-min.js'},
-                    {src: 'src/bower_components/jquery/dist/jquery.min.js', dest: 'dist/js/jquery.min.js'},
-                    {src: 'src/bower_components/angular/angular.min.js', dest: 'dist/js/angular.min.js'},
-                    {src: 'src/bower_components/angular-route/angular-route.min.js', dest: 'dist/js/angular-route.min.js'},
-                    {src: 'src/bower_components/moment/min/moment.min.js', dest: 'dist/js/moment.min.js'},
-                    {src: 'src/bower_components/angular-moment/angular-moment.min.js', dest: 'dist/js/angular-moment.min.js'},
-                    {src: 'src/bower_components/bootstrap/dist/js/bootstrap.min.js', dest: 'dist/js/bootstrap.min.js'},
-                    {src: 'src/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js', dest: 'dist/js/ui-bootstrap-tpls.min.js'},
-                    {src: 'src/bower_components/bootstrap/dist/css/bootstrap.min.css', dest: 'dist/css/bootstrap.min.css'},
+					{cwd: 'src/js/lib', src: ['**', '!less.min.js'], dest: 'dist/js', expand: true, flatten: true},
+					{cwd: 'src/css/lib', src: '**', dest: 'dist/css', expand: true, flatten: true},
                     {src: 'src/.htaccess', dest: 'dist/.htaccess'},
                     {src: 'src/img/*', dest: 'dist/img', expand: true, flatten: true},
                     {src: 'src/img/chronik/*', dest: 'dist/img/chronik', expand: true, flatten: true},
@@ -149,7 +140,7 @@ module.exports = function (grunt) {
                             'dist/js/angular-route.min.js',
                             'dist/js/angular-locale_de-de.min.js',
                             'dist/js/moment.min.js',
-                            'dist/js/.de.min.js',
+                            'dist/js/de.min.js',
                             'dist/js/angular-moment.min.js',
                             'dist/js/bootstrap.min.js',
                             'dist/js/ui-bootstrap-tpls.min.js',
@@ -200,7 +191,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-text-replace');
 
     grunt.registerTask('run', ['connect:run','watch:run']);
-    grunt.registerTask('dist', ['clean:pre','processhtml','htmlmin','less','uglify','copy','cssmin','replace','concat',/*'jshint',*/'clean:post']);
+    grunt.registerTask('dist', ['clean:pre','processhtml','htmlmin','less','uglify','copy','cssmin','replace','concat'/*,'jshint',*/,'clean:post']);
     grunt.registerTask('distTest', ['connect:dist']);
 
 };
