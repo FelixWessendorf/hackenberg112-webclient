@@ -1,7 +1,7 @@
 <h1>Personal</h1>
 <p>In unserem Löschzug sind derzeit {{persons.length}} Kameraden und Kameradinnen aktiv.</p>
 <ul>
-    <li data-ng-repeat="person in persons">{{person.sex=='f'?'Frau':'Herr'}} {{person.firstName}} {{person.lastName}} <br class="visible-xs-inline"> <span class="small">({{person.rank.name}})</span></li>
+    <li data-ng-repeat="person in persons">{{person.sex=='f'?'Frau':'Herr'}} {{person.firstName}} {{person.lastName}} <br class="visible-xs-inline"> <span class="small" style="margin-left: 5px">({{person.rank.name}})</span></li>
 </ul>
 <div data-ng-if="statistics.length>0">
   <p>Das Durchschnittsalter unseres Personals beträgt {{statistics[0]|number:2}} Jahre bei einer durchschnittlichen Dienstzeit von {{statistics[1]|number:2}} Jahren.</p>
