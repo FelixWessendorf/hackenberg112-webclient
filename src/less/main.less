@@ -249,3 +249,76 @@ body.modal-open {
     margin-right: 10px;
   }
 }
+
+.modal-party {
+  .modal-header {
+    background-color: #6d6f71;
+    color: white;
+    .modal-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 2.5rem;
+      line-height: 1.1;
+      img {
+        height: 60px;
+        margin-right: 10px;
+      }
+    }
+    .close {
+      color: white;
+      opacity: 1;
+      text-shadow: none;
+    }
+  }
+  .modal-body {
+    background-color: #ed1c24;
+    color: white;
+    h2 {
+      font-weight: bold;
+    }
+    h3 {
+      text-decoration: underline;
+      margin: 0;
+    }
+    p {
+      margin-top: 5px;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .modal-footer {
+    &:before, &:after {
+      all: unset;
+    }
+    background-color: #6d6f71;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 400px) {
+      flex-direction: row;
+    }
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 2rem;
+    img {
+      height: 30px;
+      &:last-child {
+        display: none;
+      }
+      @media (min-width: 400px) {
+        &:last-child {
+          display: block;
+        }
+      }
+    }
+    span {
+      white-space: nowrap;
+      flex-grow: 1;
+      text-align: center;
+    }
+  }
+}
