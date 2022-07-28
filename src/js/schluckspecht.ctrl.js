@@ -17,7 +17,6 @@
             if ($scope.team.length < 3 ) {
                 $scope.error.push('Ihr Teamname sollte mindestens 3 Zeichen lang sein');
             }
-                console.log(participantArray)
             if (participantArray.length < 4) {
                 $scope.error.push('Bitte geben Sie mindestens 4 Teilnehmer an');
             }
