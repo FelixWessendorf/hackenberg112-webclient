@@ -34,8 +34,9 @@
 	</div>
 	<div ng-show="registration">
 		<h4>Anmeldung:</h4>
-		<p>Für eine Teilname am Schluckspechtpokal bitte die folgenden Felder ausfüllen</p>
-		<form name="form" novalidate ng-submit="FormSubmit()">
+		<p>Für eine Teilnahme am Schluckspechtpokal bitte die folgenden Felder ausfüllen</p>
+		<br>
+		<form name="form" ng-submit="FormSubmit()">
 			<div>
 				<div class="row">
 					<div class="col-md-3">
@@ -63,13 +64,14 @@
 					</div>
 				</div>
 				<div>
+					<br>
+					<p ng-repeat="e in error" class="text-danger">{{e}}</p>
+					<br>
+				</div>
+				<div>
 					<button type="submit" class="btn btn-primary">anmelden</button>
 				</div>
 			</div>
 		</form>
-		<br>
-		<div>
-			<p ng-repeat="e in error">{{e}}</p>
-		</div>
 	</div>
 </div>

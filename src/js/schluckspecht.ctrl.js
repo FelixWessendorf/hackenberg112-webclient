@@ -12,10 +12,17 @@
             angular.forEach(participants.children(), function (input) {
                 if (input.value.trim().length > 0) {
                     participantArray.push(input.value);
+                    input.classList.remove('error');
+                } else {
+                    input.classList.add('error');
                 }
             });
+            var teamnameInput = document.querySelector('#teamname');
             if ($scope.team.length < 3 ) {
                 $scope.error.push('Ihr Teamname sollte mindestens 3 Zeichen lang sein');
+                teamnameInput.classList.add('error');
+            } else {
+                teamnameInput.classList.remove('error');
             }
             if (participantArray.length < 4) {
                 $scope.error.push('Bitte geben Sie mindestens 4 Teilnehmer an');
