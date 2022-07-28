@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('app').controller('SchluckspechtController',['$scope','$uibModal',function($scope,$uibModal){
+    angular.module('app').controller('SchluckspechtController',['$scope','$uibModal',function($scope){
         $scope.message = '';
         $scope.team = '';
         var participants = angular.element(document.querySelector('#participants'));
@@ -14,7 +14,6 @@
                     participantArray.push(input.value);
                 }
             });
-
             if ($scope.team.length < 3 ) {
                 $scope.error.push('Ihr Teamname sollte mindestens 3 Zeichen lang sein');
             }
@@ -29,9 +28,9 @@
             }
         }
         $scope.count = 5;
-        $scope.addInput = function (e) {
+        $scope.addInput = function () {
             if ($scope.count <= 9) {
-                participants.append('<input type="text" name="teilnehmer'+$scope.count+'" class="form-control" ng-model="participant'+$scope.count+'">');
+                participants.append('<input type="text" class="form-control">');
                 $scope.count = $scope.count+1;
             } else {
                 $scope.error.push('Es sind nur 9 Teilnehmer pro Team erlaubt');
