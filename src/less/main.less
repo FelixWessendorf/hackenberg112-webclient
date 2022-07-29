@@ -326,6 +326,13 @@ body.modal-open {
   .error {
     border: 1px solid #a94442;
   }
+  h2, & > div {
+    margin-top: 2rem;
+  }
+  .btn {
+    line-height: 1;
+    padding-top: 10px;
+  }
   #teamnameRow {
     & > div:first-child {
       display: flex;
@@ -338,14 +345,22 @@ body.modal-open {
     }
   }
   #participantsRow {
+    margin-bottom: 2rem;
     & > div:first-child {
       margin-top: 7px;
+    }
+    button {
+      margin-bottom: .5rem;
     }
   }
   #participants {
     input {
       margin-bottom: .5rem;
     }
+  }
+  .col-md-offset-3 {
+    padding-left: 15px;
+
   }
 }
 

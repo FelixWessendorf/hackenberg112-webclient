@@ -1,7 +1,5 @@
 <div id="schluckspecht">
-	<h1>Schluckspechtpokal 2022 Löschzug Hackenberg</h1>
-
-	<br>
+	<h1>Schluckspechtpokal 2022</h1>
 	<h2>Beschreibung:</h2>
 	<p>Für den Schluckspechtpokal finden sich Teams aus 4 – 9 Personen
 		zusammen.</p>
@@ -9,7 +7,6 @@
 		einzelnen Teams digital geloggt und auf einem Bildschirm live angezeigt.
 		Das Team mit den meisten bestellten Bieren am Ende des vorgegebenen
 		Zeitraums (3h) gewinnt den diesjährigen Schluckspechtpokal.</p>
-	<br>
 	<h2>Spielregeln:</h2>
 	<ul>
 		<li>Ein Team besteht aus 4 – 9 Teilnehmern</li>
@@ -19,7 +16,6 @@
 		<li>Bierbestellungen sind vom Teamkapitän an der ausgewiesenen Zapfstelle vorzunehmen</li>
 		<li>1. Platz, 2. Platz und 3. Platz erhalten nach Durchführung des Events einen Pokal</li>
 	</ul>
-	<br>
 	<h2>Ablauf:</h2>
 	<ul>
 		<li>Start: 06.08.2022 um 19:00 Uhr</li>
@@ -27,15 +23,13 @@
 		<li>Anmeldungen der Teams im Vorfeld über die Homepage oder vor Ort am 06.08.2022 von 18:00 Uhr bis 18:45 Uhr</li>
 		<li>Siegerehrung um 22:15 Uhr</li>
 	</ul>
-	<br>
 	<div ng-show="!registration">
 		<p class="text-success">{{message}}</p>
 		<button ng-click="registration = true" class="btn btn-primary">Jetzt anmelden</button>
 	</div>
 	<div ng-show="registration">
-		<h4>Anmeldung:</h4>
+		<h2>Anmeldung:</h2>
 		<p>Für eine Teilnahme am Schluckspechtpokal bitte die folgenden Felder ausfüllen</p>
-		<br>
 		<form name="form" ng-submit="FormSubmit()">
 			<div>
 				<div id="teamnameRow" class="row">
@@ -49,8 +43,7 @@
 				<div id="participantsRow" class="row">
 					<div class="col-md-3">
 						<label>Namen der Mitglieder</label>
-						<br>
-						<small>4-9 Personen</small>
+						<p>4-9 Personen</p>
 					</div>
 					<div class="col-md-9 ">
 						<div id="participants" class="form-group">
@@ -61,16 +54,17 @@
 						</div>
 						<button type="button" class="btn btn-secondary" ng-click="addInput()" ng-show="count <= 9">+ weiteren Teilnehmer hinzufügen</button>
 						<button type="button" class="btn btn-secondary" data-ng-click="removeInput()" ng-show="count > 5">- letzten Eintrag entfernen</button>
-						<br>
 					</div>
 				</div>
-				<div>
-					<br>
-					<p ng-repeat="e in error" class="text-danger">{{e}}</p>
-					<br>
+				<div class="row">
+					<div class="col-md-offset-3">
+						<p ng-repeat="e in error" class="text-danger">{{e}}</p>
+					</div>
 				</div>
-				<div>
-					<button type="submit" class="btn btn-primary">Anmelden</button>
+				<div class="row">
+					<div class="col-md-offset-3">
+						<button type="submit" class="btn btn-primary">Anmelden</button>
+					</div>
 				</div>
 			</div>
 		</form>
