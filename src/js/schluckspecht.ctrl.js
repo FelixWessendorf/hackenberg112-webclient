@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('app').controller('SchluckspechtController',['$scope','$uibModal',function($scope){
+    angular.module('app').controller('SchluckspechtController',['$scope','ApiService',function($scope, apiService){
         $scope.message = '';
         $scope.team = '';
         var participants = angular.element(document.querySelector('#participants'));
@@ -29,8 +29,24 @@
             }
 
             if ($scope.error.length === 0) {
-                $scope.message = 'Registrierung für Team '+ $scope.team +' erfolgreich, guten Durst!';
-                $scope.registration = false;
+                apiService.team.create($scope.team, participantArray)
+                    .then((result) => {
+                        $scope.message = 'Registrierung für Team '+ $scope.team +' erfolgreich, guten Durst!';
+                        $scope.registration = false;
+                        var inputCount = 0;
+                        angular.forEach(participants.children(), function (input) {
+                            if (inputCount < 4) {
+                                input.value = '';
+                            } else {
+                                input.remove();
+                            }
+                            inputCount++;
+                        });
+                        teamnameInput.value = '';
+                    })
+                    .catch((error) => {
+                        $scope.error.push(error[0]['message']);
+                    });
             }
         }
         $scope.count = 5;

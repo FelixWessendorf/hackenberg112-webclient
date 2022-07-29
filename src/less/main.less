@@ -322,6 +322,26 @@ body.modal-open {
     }
   }
 }
-.error {
-  border: 1px solid #a94442;
+#schluckspecht {
+  .error {
+    border: 1px solid #a94442;
+  }
+  #teamnameRow {
+    & > div:first-child {
+      display: flex;
+      align-items: center;
+      height: 34px;
+      padding: 6px 12px;
+      & > label {
+        margin: 0;
+      }
+    }
+  }
+
+  #participants {
+    input {
+      margin-bottom: .5rem;
+    }
+  }
 }
+
