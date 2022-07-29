@@ -58,6 +58,12 @@
                 $scope.error.push('Es sind nur 9 Teilnehmer pro Team erlaubt');
             }
         }
+        $scope.removeInput = function () {
+            if ($scope.count > 4) {
+                $scope.count = $scope.count-1;
+                participants.children().eq($scope.count-1).remove();
+            }
+        }
     }]);
 
 

@@ -6,8 +6,8 @@
 	<p>Für den Schluckspechtpokal finden sich Teams aus 4 – 9 Personen
 		zusammen.</p>
 	<p>Während des Schluckspechtpokals wird die Menge des bestellten Biers der
-		einzelnen Teams digital geloggt und auf einem Bildschirm Live angezeigt.
-		Das Team mit dem meisten bestellten Bieren am Ende des vorgegebenen
+		einzelnen Teams digital geloggt und auf einem Bildschirm live angezeigt.
+		Das Team mit den meisten bestellten Bieren am Ende des vorgegebenen
 		Zeitraums (3h) gewinnt den diesjährigen Schluckspechtpokal.</p>
 	<br>
 	<h2>Spielregeln:</h2>
@@ -46,7 +46,7 @@
 						<input id="teamname" type="text" name="teamname" class="form-control" ng-model="team">
 					</div>
 				</div>
-				<div class="row">
+				<div id="participantsRow" class="row">
 					<div class="col-md-3">
 						<label>Namen der Mitglieder</label>
 						<br>
@@ -59,7 +59,8 @@
 						<input type="text" class="form-control">
 						<input type="text" class="form-control">
 						</div>
-						<button type="button" class="btn btn-default" ng-click="addInput()" ng-show="count <= 9">weiteren Teilnehmer hinzufügen</button>
+						<button type="button" class="btn btn-secondary" ng-click="addInput()" ng-show="count <= 9">+ weiteren Teilnehmer hinzufügen</button>
+						<button type="button" class="btn btn-secondary" data-ng-click="removeInput()" ng-show="count > 5">- letzten Eintrag entfernen</button>
 						<br>
 					</div>
 				</div>
