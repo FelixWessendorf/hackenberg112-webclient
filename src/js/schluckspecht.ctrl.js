@@ -30,7 +30,7 @@
 
             if ($scope.error.length === 0) {
                 apiService.team.create($scope.team, participantArray)
-                    .then((result) => {
+                    .then(function() {
                         $scope.message = 'Registrierung für Team '+ $scope.team +' erfolgreich, guten Durst!';
                         $scope.registration = false;
                         var inputCount = 0;
@@ -44,7 +44,7 @@
                         });
                         teamnameInput.value = '';
                     })
-                    .catch((error) => {
+                    .catch(function(error) {
                         $scope.error.push(error[0]['message']);
                     });
             }
