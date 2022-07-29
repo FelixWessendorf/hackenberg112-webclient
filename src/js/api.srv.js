@@ -40,6 +40,12 @@
             }
         };
 
+        this.team = {
+            create: function(name, members) {
+                return call('Team', 'Create', [name, members]);
+            }
+        };
+
         this.apiEndpointUrl = function(){
             return apiEndpointUrl;
         };

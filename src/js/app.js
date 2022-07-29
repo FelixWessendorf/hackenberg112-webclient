@@ -59,6 +59,10 @@
                     templateUrl: 'templates/tag-der-offenen-tuer-2014.html',
                     controller: 'OpenDoorDay2014Controller'
                 }).
+                when('/schluckspecht', {
+                    templateUrl: 'templates/schluckspecht.html',
+                    controller: 'SchluckspechtController'
+                }).
                 when('/impressum', {
                     templateUrl: 'templates/impressum.html'
                 }).
