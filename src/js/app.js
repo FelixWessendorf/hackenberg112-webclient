@@ -60,7 +60,7 @@
                     controller: 'OpenDoorDay2014Controller'
                 }).
                 when('/schluckspecht', {
-                    templateUrl: 'templates/schluckspecht.html',
+                    templateUrl: 'templates/schluckspecht-2022.html',
                     controller: 'SchluckspechtController'
                 }).
                 when('/impressum', {
