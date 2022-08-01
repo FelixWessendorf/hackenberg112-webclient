@@ -12,13 +12,13 @@
         ]
         $scope.loadData = function (){
             console.log('load Data')
-            // apiService.team.listAll()
-            //     .then(function (return){
-            //
-            //     })
-            //     .catch(function(error) {
-            //         $scope.error.push(error[0]['message']);
-            //     });
+            apiService.team.listAll()
+                .then(function (return){
+                    console.log(return)
+                })
+                .catch(function(error) {
+                    $scope.error.push(error[0]['message']);
+                });
         }
         $scope.loadData()
 
