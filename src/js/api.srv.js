@@ -43,6 +43,12 @@
         this.team = {
             create: function(name, members) {
                 return call('Team', 'Create', [name, members]);
+            },
+            listAll: function(id, name) {
+                return call('Team', 'listAll', [id, name]);
+            },
+            book: function(id, amount) {
+                return call('Team', 'book', [id, amount]);
             }
         };
 
