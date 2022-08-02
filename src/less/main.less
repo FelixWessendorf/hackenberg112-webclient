@@ -360,6 +360,11 @@ body.modal-open {
   }
 }
 #schluckspecht-bestellungen {
+  #password {
+    button, input {
+      margin: 1rem;
+    }
+  }
   table {
     margin-top: 1rem;
     width: 100%;
@@ -370,12 +375,6 @@ body.modal-open {
   }
   tr {
     margin: 1rem;
-  }
-  .success {
-    color: #2b542c;
-    width: 100%;
-    text-align: center;
-    margin: .5rem;
   }
   .buttonbar {
     display: flex;
@@ -396,17 +395,65 @@ body.modal-open {
     justify-content: center;
     font-size: larger;
     font-weight: bolder;
-    background-color: #1b6d85;
     color: white;
     margin: 5px;
     cursor: pointer;
   }
+  .add {
+    background-color: #2b542c;
+  }
+  .reset {
+    background-color: #761c19;
+  }
+  #message {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    p {
+      color: #2b542c;
+      width: 100%;
+      text-align: center;
+      margin: .5rem;
+    }
+  }
+
   .counter {
     margin: 2rem .5rem;
     text-align: center;
     h3 {
       font-weight: bolder;
       font-size: xx-large;
+    }
+  }
+  .teams {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    .teamnameButton {
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 1rem;
+      background-color: #2e6da4;
+      color: white;
+      font-size: larger;
+      font-weight: bolder;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+  .bookingReset{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    .resetButton {
+      border-radius: 1rem;
+      color: white;
+      background-color: #761c19;
+      padding: .5rem;
     }
   }
 }

@@ -1,26 +1,32 @@
 <div id="schluckspecht-bestellungen" xmlns="http://www.w3.org/1999/html">
 	<h1>Schluckspechtpokal 2022</h1>
 	<h2>Bestellungen buchen</h2>
-<!--	<div class="counter">-->
-<!--		<h3>{{count}}</h3>-->
-<!--	</div>-->
-<!--	<div class="buttonbar">-->
-<!--		<div class="button" ng-click="count = count+1">+1</div>-->
-<!--		<div class="button" ng-click="count = count+3">+3</div>-->
-<!--		<div class="button" ng-click="count = count+5">+5</div>-->
-<!--		<div class="button" ng-click="count = count+10">+10</div>-->
-<!--		<div class="button" ng-click="count = 0">reset</div>-->
-<!--	</div>-->
-	<p ng-if="success" class="success">{{number}} Getränke auf {{teamname}} gebucht</p>
-	<table class="table table-striped">
-		<tr ng-repeat="t in teams" id="{{t.id}}"><td>{{t.name}}</td>
-			<td><button class="btn" ng-click="count = count+1">+1</button></td>
-			<td><button class="btn" ng-click="count = count+3">+3</button></td>
-			<td><button class="btn" ng-click="count = count+5">+5</button></td>
-			<td><button class="btn" ng-click="count = count+10">+10</button></td>
-			<td>{{count}}</td>
-			<td><button class="btn" ng-click="count = 0">reset</button></td>
-			<td><button class="btn btn-primary" ng-click="buchen(t.id, count); count = 0">buchen</button></td>
-		</tr>
-	</table>
+	<div ng-show="!passwordSuccess" id="password">
+		<h3>Bitte Passwort eingeben</h3>
+		<input type="text" ng-model="entry">
+		<button type="button" class="btn btn-primary" ng-click="passwordcheck(entry)">senden</button>
+	</div>
+	<div ng-show="passwordSuccess">
+		<div class="counter">
+			<h3>{{count}}</h3>
+		</div>
+		<div class="buttonbar">
+			<div class="button add" ng-click="count = count+1">+1</div>
+			<div class="button add" ng-click="count = count+3">+3</div>
+			<div class="button add" ng-click="count = count+5">+5</div>
+			<div class="button add" ng-click="count = count+10">+10</div>
+			<div class="button reset" ng-click="count = 0">reset</div>
+		</div>
+		<div id="message" ng-if="message">
+			<p class="success">{{successmessage}}</p>
+		</div>
+
+		<div class="teams row">
+			<div ng-repeat="t in teams" id="{{t.id}}" class="teamnameButton col-md-3 col-xs-12"
+				 ng-click="book(t.id, count)">{{t.name}}</div>
+		</div>
+		<div ng-if="booking" class="bookingReset">
+			<button ng-click="resetBooking()" class="resetButton">Letzte Buchung rückgängig machen</button>
+		</div>
+	</div>
 </div>
