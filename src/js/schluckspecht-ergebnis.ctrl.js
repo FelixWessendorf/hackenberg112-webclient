@@ -8,23 +8,47 @@
             {
             teamname: 'test',
             getrunken: '3'
+            },
+            {
+                teamname: 'test2',
+                getrunken: '5'
+            },
+            {
+                teamname: 'test3',
+                getrunken: '2'
             }
         ]
         $scope.loadData = function (){
             console.log('load Data')
             apiService.team.listAll()
-                .then(function (return){
-                    console.log(return)
+                .then(function(response) {
+                    var teams = response;
+                    var ergebnisArray = [];
+                    // $scope.ergebnis.map(function (team){
+                    //     if (ergebnisArray.length === 0){
+                    //         ergebnisArray.push(team);
+                    //     }
+                    //     ergebnisArray.map(function (ergebniseintrag){
+                    //         if (ergebniseintrag.getrunken < team.getrunken) {
+                    //             ergebnisArray.unshift(team)
+                    //         } else {
+                    //             ergebnisArray.push(team)
+                    //         }
+                    //     })
+                    //
+                    // });
+                    console.log(Object.entries($scope.ergebnis).sort((a,b) => b[1]-a[1]))
+                    // $scope.ergebnis = ergebnisArray;
                 })
                 .catch(function(error) {
-                    $scope.error.push(error[0]['message']);
+                    console.log(error);
                 });
         }
         $scope.loadData()
 
-        $interval(function(){
-            $scope.loadData();
-        },30000)
+        // $interval(function(){
+        //     $scope.loadData();
+        // },30000)
     }]);
 
 

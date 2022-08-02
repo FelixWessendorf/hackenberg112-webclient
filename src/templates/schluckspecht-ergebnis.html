@@ -2,7 +2,7 @@
 	<h1>Schluckspechtpokal 2022</h1>
 	<h2>Ergebnis</h2>
 	<table class="table table-striped">
-		<tr><th>Platz</th><th>bestellt</th><th>Team</th></tr>
-		<tr ng-repeat="e in ergebnis"><td>{{$index+1}}</td><td>{{e.getrunken}}</td><td>{{e.teamname}}</td></tr>
+		<tr><th>Platz</th><th>Team</th><th>bestellt</th></tr>
+		<tr ng-repeat="e in ergebnis"><td>{{$index+1}}</td><td>{{e.teamname}}</td><td>{{e.getrunken}}</td></tr>
 	</table>
 </div>
