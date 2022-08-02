@@ -7,10 +7,10 @@
 		<button type="button" class="btn btn-primary" ng-click="passwordcheck(entry)">senden</button>
 	</div>
 	<div ng-show="passwordSuccess">
-		<div class="counter">
+		<div id="counter">
 			<h3>{{count}}</h3>
 		</div>
-		<div class="buttonbar">
+		<div id="buttonbar">
 			<div class="button add" ng-click="count = count+1">+1</div>
 			<div class="button add" ng-click="count = count+3">+3</div>
 			<div class="button add" ng-click="count = count+5">+5</div>
@@ -21,11 +21,11 @@
 			<p class="success">{{successmessage}}</p>
 		</div>
 
-		<div class="teams row">
+		<div id="teams" class="row">
 			<div ng-repeat="t in teams" id="{{t.id}}" class="teamnameButton col-md-3 col-xs-12"
 				 ng-click="book(t.id, count)">{{t.name}}</div>
 		</div>
-		<div ng-if="booking" class="bookingReset">
+		<div id="bookingReset"  ng-if="booking">
 			<button ng-click="resetBooking()" class="resetButton">Letzte Buchung rückgängig machen</button>
 		</div>
 	</div>
