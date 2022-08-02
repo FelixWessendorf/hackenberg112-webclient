@@ -11,11 +11,11 @@
 			<h3>{{count}}</h3>
 		</div>
 		<div id="buttonbar">
-			<div class="button add" ng-click="count = count+1">+1</div>
-			<div class="button add" ng-click="count = count+3">+3</div>
-			<div class="button add" ng-click="count = count+5">+5</div>
-			<div class="button add" ng-click="count = count+10">+10</div>
-			<div class="button reset" ng-click="count = 0">reset</div>
+			<div class="button add" ng-click="count = count+1; message=false">+1</div>
+			<div class="button add" ng-click="count = count+3; message=false">+3</div>
+			<div class="button add" ng-click="count = count+5; message=false">+5</div>
+			<div class="button add" ng-click="count = count+10; message=false">+10</div>
+			<div class="button reset" ng-click="count = 0; message=false">reset</div>
 		</div>
 		<div id="message" ng-if="message">
 			<p class="success">{{successmessage}}</p>
