@@ -7,15 +7,15 @@
         $scope.ergebnis = [
             {
             teamname: 'test',
-            getrunken: '3'
+            getrunken: 35
             },
             {
                 teamname: 'test2',
-                getrunken: '5'
+                getrunken: 50
             },
             {
                 teamname: 'test3',
-                getrunken: '2'
+                getrunken: 20
             }
         ]
         $scope.loadData = function (){
@@ -45,11 +45,11 @@
                 });
         }
         $scope.loadData()
-
         // $interval(function(){
         //     $scope.loadData();
         // },30000)
+
+        $scope.number = 15;
+
     }]);
-
-
 })();

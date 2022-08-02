@@ -1,8 +1,9 @@
 <div id="schluckspecht-ergebnis">
 	<h1>Schluckspechtpokal 2022</h1>
 	<h2>Ergebnis</h2>
-	<table class="table table-striped">
-		<tr><th>Platz</th><th>Team</th><th>bestellt</th></tr>
-		<tr ng-repeat="e in ergebnis"><td>{{$index+1}}</td><td>{{e.teamname}}</td><td>{{e.getrunken}}</td></tr>
-	</table>
+	<div>
+		<div ng-repeat="e in ergebnis" class="line"><div>{{$index+1}}</div><div>{{e.teamname}}</div>
+			<div><span class="spacer" ng-repeat="x in [].constructor(e.getrunken) track by $index"></span>
+		<span>{{e.getrunken}}</span></div>
+	</div>
 </div>
