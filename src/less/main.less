@@ -360,25 +360,69 @@ body.modal-open {
   }
 }
 #schluckspecht-ergebnis {
-  #testbereich {
+  h2 {
+    text-align: center;
+    font-size: 40px;
+    & > img {
+      margin: 0 2rem;
+      height: 5rem;
+    }
+  }
+  table {
     width: 100%;
-    background-color: #5bc0de;
-  }
-  .spacer {
-    display: inline-block;
-    background-color: #398439;
-    min-width: 5px;
-    height: 20px;
-  }
-  .line {
-    display: flex;
-    margin: .5rem;
-    & > div {
-      margin-right: 1rem;
-      min-width: 30px;
-      display: flex;
-      & > span:last-child {
-        margin-left: .5rem;
+    tr {
+      padding-bottom: .5rem;
+
+      .place {
+        padding: 1rem;
+        & > span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 4rem;
+          height: 4rem;
+          //border: 1px solid black;
+          border-radius: 5rem;
+          padding: 1rem;
+          font-size: larger;
+          & > span {
+            max-height: 20px;
+          }
+        }
+      }
+
+      .name {
+        font-size: larger;
+        padding: 0 .5rem;
+        min-width: 25%;
+        font-weight: bolder;
+      }
+
+      .graph {
+        width: 100%;
+        position: relative;
+        padding: .5rem 0;
+
+        & > span {
+          display: inline-block;
+          height: 60px;
+          & > span {
+            position: absolute;
+            padding: 1rem;
+            right: 1rem;
+            font-size: larger;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+          }
+          img {
+            width: 2rem;
+            height: 2rem;
+            margin-right: 1rem;
+          }
+        }
       }
     }
   }
