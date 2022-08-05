@@ -45,7 +45,7 @@
                 return call('Team', 'Create', [name, members]);
             },
             listAll: function(id, name) {
-                return call('Team', 'listAll', [id, name]);
+                return call('Team', 'listAll', []);
             },
             book: function(id, amount) {
                 return call('Team', 'book', [id, amount]);

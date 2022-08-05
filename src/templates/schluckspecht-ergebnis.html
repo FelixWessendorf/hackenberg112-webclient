@@ -1,12 +1,14 @@
 <div id="schluckspecht-ergebnis">
 	<h1>Schluckspechtpokal 2022</h1>
-	<h2><img src="img/biere.png" alt="biere"> Platzierungen <img src="img/biere.png" alt="biere"></h2>
+	<h2>Platzierungen
+<!--		<img src="img/biere.png" alt="biere">-->
+	</h2>
 	<table>
 		<tr ng-repeat="e in ergebnis">
-			<td class="place"><span style="background-color: {{e.color}}"><span>{{$index+1}}</span></span></td>
+			<td class="place"><span>{{$index+1}}</span></td>
 			<td class="name">{{e.name}}</td>
 			<td class="graph">
-				<span style="width: {{e.prozent}}%; background-color: rgb({{e.color}})">
+				<span style="width: {{e.prozent}}%;">
 					<span><img src="img/pokal.png" alt="pokal" ng-if="$index===0">
 					{{e.amount}}</span></span>
 			</td>
