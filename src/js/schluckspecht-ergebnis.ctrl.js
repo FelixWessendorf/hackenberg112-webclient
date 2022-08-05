@@ -7,26 +7,26 @@
             apiService.team.listAll()
                 .then(function(response) {
                     $scope.ergebnis = response;
-                    function compare( a, b ) {
-                        if ( a.amount > b.amount ){
+                    function compare(a, b) {
+                        if (a.amount > b.amount) {
                             return -1;
                         }
-                        if ( a.amount < b.amount ){
+                        if (a.amount < b.amount) {
                             return 1;
                         }
                         return 0;
                     }
                     $scope.ergebnis.sort( compare );
 
-                    let max = 0;
-                    $scope.ergebnis.map(function (team){
+                    var max = 0;
+                    $scope.ergebnis.map(function(team) {
                         if (max === 0) {
                             max = team.amount;
                             team.prozent = 100;
                         } else {
-                            team.prozent = (100/max*team.amount).toFixed(2);
+                            team.prozent = (100 / max * team.amount).toFixed(2);
                         }
-                    })
+                    });
                 })
                 .catch(function(error) {
                     console.log(error);
