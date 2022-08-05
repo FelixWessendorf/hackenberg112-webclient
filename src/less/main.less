@@ -359,6 +359,98 @@ body.modal-open {
     padding-left: 15px;
   }
 }
+#schluckspecht-bestellungen {
+  #password {
+    button, input {
+      margin: 1rem;
+    }
+  }
+  #counter {
+    margin: 2rem .5rem;
+    text-align: center;
+    h3 {
+      font-weight: bolder;
+      font-size: xx-large;
+    }
+  }
+  #buttonbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .add {
+      background-color: #398439;
+    }
+    .reset {
+      background-color: #761c19;
+      width: 100px;
+    }
+    .button {
+      display: flex;
+      border-radius: 1rem;
+      min-width: 50px;
+      height: 50px;
+      align-items: center;
+      justify-content: center;
+      font-size: larger;
+      font-weight: bolder;
+      color: white;
+      margin: 5px;
+      cursor: pointer;
+    }
+  }
+  #message {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    box-shadow: 5px 2px 2px #2b542c;
+    border: 1px solid #2b542c;
+    border-radius: 1rem;
+    p {
+      color: #2b542c;
+      width: 100%;
+      text-align: center;
+      margin: .5rem;
+    }
+  }
+  #teams {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    .teamname-button {
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 1rem;
+      background-color: #2e6da4;
+      color: white;
+      font-size: larger;
+      font-weight: bolder;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+  #bookingReset{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    .resetButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1rem;
+      color: white;
+      background-color: #761c19;
+      padding: .5rem 1rem;
+      border: 0;
+      font-size: smaller;
+    }
+  }
+}
 #schluckspecht-ergebnis {
   table {
     width: 100%;

@@ -1,0 +1,32 @@
+<div id="schluckspecht-bestellungen" xmlns="http://www.w3.org/1999/html">
+	<h1>Schluckspechtpokal 2022</h1>
+	<h2>Bestellungen buchen</h2>
+	<div ng-show="!passwordSuccess" id="password">
+		<h3>Bitte Passwort eingeben</h3>
+		<input type="password" ng-model="entry">
+		<button type="button" class="btn btn-primary" ng-click="passwordcheck(entry)">senden</button>
+	</div>
+	<div ng-show="passwordSuccess">
+		<div id="counter">
+			<h3>{{count}}</h3>
+		</div>
+		<div id="buttonbar">
+			<div class="button add" ng-click="count = count+1; message=false">+1</div>
+			<div class="button add" ng-click="count = count+3; message=false">+3</div>
+			<div class="button add" ng-click="count = count+5; message=false">+5</div>
+			<div class="button add" ng-click="count = count+10; message=false">+10</div>
+			<div class="button reset" ng-click="count = 0; message=false">reset</div>
+		</div>
+		<div id="message" ng-if="message">
+			<p class="success">{{successmessage}}</p>
+		</div>
+
+		<div id="teams" class="row">
+			<div ng-repeat="t in teams" id="{{t.id}}" class="teamname-button col-md-3 col-xs-12"
+				 ng-click="book(t.id, count)">{{t.name}}</div>
+		</div>
+		<div id="bookingReset"  ng-if="booking">
+			<button ng-click="resetBooking()" class="resetButton">Letzte Buchung rückgängig machen</button>
+		</div>
+	</div>
+</div>
