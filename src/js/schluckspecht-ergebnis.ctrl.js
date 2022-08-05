@@ -19,23 +19,22 @@
                     $scope.ergebnis.sort( compare );
 
                     let max = 0;
-                    $scope.ergebnis.map(function (e){
+                    $scope.ergebnis.map(function (element){
                         if (max === 0) {
-                            max = e.amount;
-                            e.prozent = 100;
+                            max = element.amount;
+                            element.prozent = 100;
                         } else {
-                            e.prozent = (100/max*e.amount).toFixed(2);
+                            element.prozent = (100/max*element.amount).toFixed(2);
                         }
-                        // e.color = colorArray[e.id];
                     })
                 })
                 .catch(function(error) {
                     console.log(error);
                 });
         }
-        $scope.loadData()
-        // $interval(function(){
-        //     $scope.loadData();
-        // },30000)
+        $scope.loadData();
+        $interval(function(){
+            $scope.loadData();
+        },30000)
     }]);
 })();
