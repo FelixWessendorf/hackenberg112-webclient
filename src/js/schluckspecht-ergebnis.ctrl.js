@@ -14,11 +14,13 @@
         //     '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3',
         //     '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
 
+        var max = 360;
+        var min = 200;
         var colorArray = [];
         for (var i = 0; i < 10; i++) {
             var newColor = [];
             for (var j = 0; j < 3; j++) {
-                var pick = Math.trunc(Math.random() * (360));
+                var pick = Math.trunc(Math.random() * (max - min) + min);
                 newColor.push(pick)
             }
             colorArray.push(newColor.join());
