@@ -34,8 +34,8 @@
                 });
         }
         $scope.loadData()
-        $interval(function(){
-            $scope.loadData();
-        },30000)
+        // $interval(function(){
+        //     $scope.loadData();
+        // },30000)
     }]);
 })();

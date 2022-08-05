@@ -5,8 +5,8 @@
 	</h2>
 	<table>
 		<tr ng-repeat="e in ergebnis">
-			<td class="place"><span>{{$index+1}}</span></td>
-			<td class="name">{{e.name}}</td>
+			<td class="place">{{$index+1}}</td>
+			<td class="name"><span>{{e.name}}</span></td>
 			<td class="graph">
 				<span style="width: {{e.prozent}}%;">
 					<span><img src="img/pokal.png" alt="pokal" ng-if="$index===0">
