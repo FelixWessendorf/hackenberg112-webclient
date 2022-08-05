@@ -452,71 +452,56 @@ body.modal-open {
   }
 }
 #schluckspecht-ergebnis {
-  table {
+  h1 {
+    text-align: center;
+  }
+  & > div {
     width: 100%;
     @media (min-width: 400px) {
       font-size: larger;
       font-weight: bolder;
     }
 
-    tr {
+    & > div {
       padding-bottom: .5rem;
-
-      .place {
-        padding-right: 1rem;
-      }
-
-      .name {
-        padding: .5rem;
-        min-width: 50%;
-        width: 50%;
-        @media (min-width: 400px) {
-          min-width: 25%;
-          width: 25%;
-        }
-        & >  span {
-          line-height: 2rem;
-          display: inline-block;
+      position: relative;
+      & > div {
+        display: flex;
+        z-index: 2;
+        position: relative;
+        justify-content: space-between;
+        div:first-child {
+          display: flex;
+          align-items: center;
+          width: 75%;
           overflow: hidden;
-          max-height: 6rem;
-          vertical-align: bottom;
-          word-break: break-word;
-          @media (min-width: 400px) {
-            vertical-align: middle;
+          & > span {
+            padding: 1rem;
+            max-height: 6rem;
+            line-height: 2rem;
           }
         }
-      }
-
-      .graph {
-        width: 100%;
-        position: relative;
-        padding: .5rem 0;
-
-        span:first-child {
-          display: inline-block;
-          height: 6rem;
-          background-color: #FFD200;
-          vertical-align: middle;
-        }
-        span:last-child {
-          position: absolute;
+        .amount {
           padding: 1rem;
-          right: 1rem;
           height: 6rem;
           display: flex;
           justify-content: center;
           align-items: center;
-          top: .5rem;
           img {
-            display: none;
-            @media (min-width: 400px) {
-              display: block;
-              width: 2rem;
-              height: 2rem;
-              margin-right: 1rem;
-            }
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            margin-right: 1rem;
           }
         }
+      }
+      .graph {
+        position: absolute;
+        display: inline-block;
+        height: 6rem;
+        background-color: #FFD200;
+        z-index: 1;
+        top: 0;
       }
     }
   }

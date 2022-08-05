@@ -44,7 +44,7 @@
             create: function(name, members) {
                 return call('Team', 'Create', [name, members]);
             },
-            listAll: function(id, name) {
+            listAll: function() {
                 return call('Team', 'listAll', []);
             },
             book: function(id, amount) {

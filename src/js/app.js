@@ -63,10 +63,10 @@
                     templateUrl: 'templates/schluckspecht-2022.html',
                     controller: 'SchluckspechtController'
                 }).
-            when('/schluckspecht-bestellungen', {
-                templateUrl: 'templates/schluckspecht-bestellungen.html',
-                controller: 'SchluckspechtBestellungenController'
-            }).
+                when('/schluckspecht-bestellungen', {
+                    templateUrl: 'templates/schluckspecht-bestellungen.html',
+                    controller: 'SchluckspechtBestellungenController'
+                }).
                 when('/schluckspecht-ergebnis', {
                     templateUrl: 'templates/schluckspecht-ergebnis.html',
                     controller: 'SchluckspechtControllerErgebnis'
