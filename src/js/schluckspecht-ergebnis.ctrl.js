@@ -19,12 +19,12 @@
                     $scope.ergebnis.sort( compare );
 
                     let max = 0;
-                    $scope.ergebnis.map(function (element){
+                    $scope.ergebnis.map(function (team){
                         if (max === 0) {
-                            max = element.amount;
-                            element.prozent = 100;
+                            max = team.amount;
+                            team.prozent = 100;
                         } else {
-                            element.prozent = (100/max*element.amount).toFixed(2);
+                            team.prozent = (100/max*team.amount).toFixed(2);
                         }
                     })
                 })
