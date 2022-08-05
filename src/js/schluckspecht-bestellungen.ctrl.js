@@ -19,7 +19,7 @@
 
         apiService.team.listAll()
             .then(function(response) {
-                $scope.teams = response
+                $scope.teams = response;
             })
             .catch(function(error) {
                 console.log(error);
@@ -57,8 +57,6 @@
         $scope.resetBooking = function() {
             var deleteAmount = $scope.lastamount * -1;
             apiService.team.book($scope.lastid, deleteAmount)
-                .then(function(response) {
-                })
                 .catch(function(error) {
                     console.log(error);
                 });
