@@ -1,0 +1,28 @@
+<div id="einsatz-hinzufuegen">
+	<h1>Einsatz erstellen</h1>
+	<form ng-submit="FormSubmit()">
+		<div class="row input-container">
+			<div class="col-md-4">
+				<label for="einsatzdatum" class="input-group-text">Datum</label>
+				<input name="date" type="date" id="einsatzdatum" class="form-control" ng-model="date" ng-change="errorDate = false">
+				<span ng-if="errorDate">Bitte ein Datum eingeben</span>
+			</div>
+			<div class="col-md-4">
+				<label for="einsatzaction">Art des Einsatzes</label>
+				<select id="einsatzaction" class="form-control" ng-model="action" name="action" ng-change="change()">
+					<option value="others">neu anlegen</option>
+					<option value="Person im Aufzug">Person im Aufzug</option>
+					<option value="Person hinter Tür">Person hinter Tür</option>
+					<option value="Wasserschaden">Wasserschaden</option>
+					<option value="Brandeinsatz">Brandeinsatz</option>
+				</select>
+				<input type="text" ng-show="others" ng-model="actionOthers" name="others" id="einsatz-neu" class="form-control">
+				<span ng-if="errorAction">Bitte ein Einsatz eingeben</span>
+			</div>
+			<div class="col-md-4">
+				<button class="btn btn-primary" type="submit">eintragen</button>
+			</div>
+		</div>
+	</form>
+
+</div>

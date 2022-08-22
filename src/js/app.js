@@ -59,6 +59,10 @@
                     templateUrl: 'templates/tag-der-offenen-tuer-2014.html',
                     controller: 'OpenDoorDay2014Controller'
                 }).
+                when('/einsatz-hinzufuegen', {
+                    templateUrl: 'templates/einsatz-hinzufuegen.html',
+                    controller: 'MissionController'
+                }).
                 when('/impressum', {
                     templateUrl: 'templates/impressum.html'
                 }).
