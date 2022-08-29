@@ -11,10 +11,7 @@
 				<label for="einsatzaction">Art des Einsatzes</label>
 				<select id="einsatzaction" class="form-control" ng-model="action" name="action" ng-change="change()">
 					<option value="others">neu anlegen</option>
-					<option value="Person im Aufzug">Person im Aufzug</option>
-					<option value="Person hinter Tür">Person hinter Tür</option>
-					<option value="Wasserschaden">Wasserschaden</option>
-					<option value="Brandeinsatz">Brandeinsatz</option>
+					<option ng-repeat="operation in operationsDescription" value="{{operation}}">{{operation}}</option>
 				</select>
 				<input type="text" ng-show="others" ng-model="actionOthers" name="others" id="einsatz-neu" class="form-control">
 				<span ng-if="errorAction">Bitte ein Einsatz eingeben</span>
