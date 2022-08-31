@@ -1,10 +1,18 @@
 <div id="einsatz-hinzufuegen">
-	<h1>Einsatz erstellen</h1>
 	<form ng-submit="FormSubmit()">
+		<div class="heading">
+			<h1 >Einsatz erstellen</h1>
+			<div>
+				<input name="password" ng-model="password" type="password" placeholder="Passwort" class="form-control"
+					   ng-change="errorPassword = false">
+				<span ng-if="errorPassword">{{errorPassword}}</span>
+			</div>
+		</div>
 		<div class="row input-container">
 			<div class="col-md-4">
 				<label for="einsatzdatum" class="input-group-text">Datum</label>
-				<input name="date" type="date" id="einsatzdatum" class="form-control" ng-model="date" ng-change="errorDate = false">
+				<input name="date" type="date" id="einsatzdatum" class="form-control" ng-model="date"
+					   ng-change="errorDate = false">
 				<span ng-if="errorDate">Bitte ein Datum eingeben</span>
 			</div>
 			<div class="col-md-4">
@@ -21,5 +29,5 @@
 			</div>
 		</div>
 	</form>
-
+	<div class="success" ng-if="success">Eintrag angelegt</div>
 </div>
