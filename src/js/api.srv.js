@@ -4,7 +4,7 @@
 
     angular.module('app').provider('ApiService',function(){
 
-        var apiEndpointUrl = 'http://localhost:7070';
+        var apiEndpointUrl = 'http://api.hackenberg112.de';
 
         var httpConfig = {};
 
@@ -23,8 +23,11 @@
             loadOperations: function(){
                 return call('Operation','LoadOperations');
             },
-            newMission: function(date, description, password){
-                return call('Operation','newMission', [date, description, password]);
+            newOperation: function(date, description, password){
+                return call('Operation','newOperation', [date, description, password]);
+            },
+            loadOperationNames: function (){
+                return call('Operation','loadOperationNames');
             }
         };
 

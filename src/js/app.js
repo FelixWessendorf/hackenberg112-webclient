@@ -61,7 +61,7 @@
                 }).
                 when('/einsatz-hinzufuegen', {
                     templateUrl: 'templates/einsatz-hinzufuegen.html',
-                    controller: 'MissionController'
+                    controller: 'OperationController'
                 }).
                 when('/impressum', {
                     templateUrl: 'templates/impressum.html'

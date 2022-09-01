@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('app').controller('MissionController',['$scope','ApiService',function($scope, apiService){
+    angular.module('app').controller('OperationController',['$scope','ApiService',function($scope, apiService){
         $scope.password = '';
         $scope.date = '';
         $scope.action = '';
@@ -27,8 +27,10 @@
                 if ($scope.action === 'others') {
                     action = $scope.actionOthers.trim();
                 }
-
-                apiService.operation.newMission($scope.date, action, $scope.password)
+                let formattedDate =  $scope.date.getFullYear() + '-' +
+                    ($scope.date.getMonth()+1).toString().padStart(2, '0') + '-' +
+                    $scope.date.getDate().toString().padStart(2, '0');
+                apiService.operation.newOperation(formattedDate, action, $scope.password)
                     .then(function() {
                         $scope.success = true;
                     })
@@ -50,13 +52,9 @@
 
         // Laden der vorhandenen Einsätze als Vorschläge
         $scope.operationsDescription = [];
-        apiService.operation.loadOperations().then(function(operations){
-            _.each(operations,function(operation){
-                if (!$scope.operationsDescription.includes(operation.description.trim())){
-                    $scope.operationsDescription.push(operation.description.trim());
-                }
-            });
-            $scope.operationsDescription.sort()
+        apiService.operation.loadOperationNames().then(function(operationNames){
+            $scope.operationsDescription = operationNames;
+            $scope.operationsDescription.sort();
         });
     }]);
 })();
