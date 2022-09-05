@@ -2,20 +2,21 @@
 	<form ng-submit="FormSubmit()">
 		<div class="heading">
 			<h1 >Einsatz erstellen</h1>
-			<div>
-				<input name="password" ng-model="password" type="password" placeholder="Passwort" class="form-control"
+		</div>
+		<div class="row input-container">
+			<div class="col-md-3">
+				<label for="password-input" class="input-group-text">Passwort</label>
+				<input id="password-input" name="password" ng-model="password" type="password" placeholder="Passwort" class="form-control"
 					   ng-change="errorPassword = false">
 				<span ng-if="errorPassword">{{errorPassword}}</span>
 			</div>
-		</div>
-		<div class="row input-container">
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<label for="einsatzdatum" class="input-group-text">Datum</label>
 				<input name="date" type="date" id="einsatzdatum" class="form-control" ng-model="date"
 					   ng-change="errorDate = false">
 				<span ng-if="errorDate">Bitte ein Datum eingeben</span>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<label for="einsatzaction">Art des Einsatzes</label>
 				<select id="einsatzaction" class="form-control" ng-model="action" name="action" ng-change="change()">
 					<option value="others">neu anlegen</option>
@@ -24,7 +25,7 @@
 				<input type="text" ng-show="others" ng-model="actionOthers" name="others" id="einsatz-neu" class="form-control">
 				<span ng-if="errorAction">Bitte ein Einsatz eingeben</span>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<button class="btn btn-primary" type="submit">eintragen</button>
 			</div>
 		</div>

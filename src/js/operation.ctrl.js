@@ -38,7 +38,7 @@
                         if (error[0].source === 'password') {
                             $scope.errorPassword = 'Passwort falsch';
                         } else {
-                            console.log(error);
+                            $scope.errorPassword = error;
                         }
                     });
             }
