@@ -1,19 +1,25 @@
 <div id="add-operation">
 	<form ng-submit="FormSubmit()">
 		<div class="heading">
-			<h1 >Einsatz erstellen</h1>
-		</div>
+			<h1>Einsatz erstellen</h1>
+			</div>
 		<div class="row input-container">
 			<div class="col-md-3">
 				<label for="password-input" class="input-group-text">Passwort</label>
-				<input id="password-input" name="password" ng-model="password" type="password" placeholder="Passwort" class="form-control"
-					   ng-change="errorPassword = false">
+				<input
+					id="password-input" name="password" ng-model="password" type="password" placeholder="Passwort"
+					class="form-control" ng-change="errorPassword = false"
+				>
 				<span ng-if="errorPassword">{{errorPassword}}</span>
 			</div>
+		</div>
+		<div class="row input-container">
 			<div class="col-md-3">
 				<label for="einsatzdatum" class="input-group-text">Datum</label>
-				<input name="date" type="date" id="einsatzdatum" class="form-control" ng-model="date"
-					   ng-change="errorDate = false">
+				<input
+					name="date" type="date" id="einsatzdatum" class="form-control" ng-model="date"
+					ng-change="errorDate = false"
+				>
 				<span ng-if="errorDate">Bitte ein Datum eingeben</span>
 			</div>
 			<div class="col-md-3">
@@ -22,11 +28,14 @@
 					<option value="others">neu anlegen</option>
 					<option ng-repeat="operation in operationsDescription" value="{{operation}}">{{operation}}</option>
 				</select>
-				<input type="text" ng-show="others" ng-model="actionOthers" name="others" id="einsatz-neu" class="form-control">
+				<input
+					type="text" ng-show="others" ng-model="actionOthers" name="others" id="einsatz-neu"
+					class="form-control"
+				>
 				<span ng-if="errorAction">Bitte ein Einsatz eingeben</span>
 			</div>
 			<div class="col-md-3">
-				<button class="btn btn-primary" type="submit">eintragen</button>
+				<button class="btn btn-primary" type="submit">Speichern</button>
 			</div>
 		</div>
 	</form>
