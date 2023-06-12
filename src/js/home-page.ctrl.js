@@ -9,6 +9,15 @@
         $scope.apiEndpointUrl = function() {
             return apiService.apiEndpointUrl();
         };
+
+        $uibModal.open({
+            animation: true,
+            templateUrl: 'templates/party-modal.html',
+            controller: 'ImageModalController',
+            scope: $scope,
+            size: 'lg'
+        });
+
     }
 
 })();
