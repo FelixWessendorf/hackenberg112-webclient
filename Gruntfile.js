@@ -127,6 +127,14 @@ module.exports = function (grunt) {
                 src: ['dist/css/bootstrap.min.css','dist/css/main.min.css'],
                 overwrite: true,
                 replacements: [{from: '../fonts', to: 'fonts'}]
+            },
+            api: {
+                src: ['dist/js/api.min.js'],
+                overwrite: true,
+                replacements: [{
+                    from: 'http://localhost:7070',
+                    to: 'https://api.hackenberg112.de'
+                }]
             }
         },
 
@@ -161,19 +169,7 @@ module.exports = function (grunt) {
                     }
                 ]
             }
-        }/*,
-
-        jshint: {
-            options: {
-                reporter: require('jshint-stylish'),
-                eqeqeq: true,
-                strict: true,
-                eqnull: true
-            },
-
-            beforeconcat: ['Gruntfile.js', 'src/js/!*.js'],
-            afterconcat: ['dist/main.min.js']
-        }*/
+        }
 
     });
 
@@ -191,7 +187,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-text-replace');
 
     grunt.registerTask('run', ['connect:run','watch:run']);
-    grunt.registerTask('dist', ['clean:pre','processhtml','htmlmin','less','uglify','copy','cssmin','replace','concat'/*,'jshint',*/,'clean:post']);
+    grunt.registerTask('dist', ['clean:pre','processhtml','htmlmin','less','uglify','replace:api','copy','cssmin','replace:dist','concat','clean:post']);
     grunt.registerTask('distTest', ['connect:dist']);
 
 };

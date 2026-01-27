@@ -1,0 +1,49 @@
+name: Deploy Frontend to Production
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build production files
+        run: npx grunt dist
+
+      - name: Deploy to Server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # Verzeichnis erstellen falls nicht existiert
+            mkdir -p /var/www/hackenberg112.de
+            
+            # Alte Dateien löschen (außer versteckte wie .well-known für Let's Encrypt)
+            find /var/www/hackenberg112.de -mindepth 1 -not -path '*/\.*' -delete
+
+      - name: Copy files to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "dist/*"
+          target: "/var/www/hackenberg112.de/"
+          strip_components: 1
+          rm: false

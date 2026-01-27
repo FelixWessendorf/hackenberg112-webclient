@@ -4,7 +4,7 @@
 
     angular.module('app').provider('ApiService',function(){
 
-        var apiEndpointUrl = 'http://api.hackenberg112.de';
+        var apiEndpointUrl = 'http://localhost:7070';
 
         var httpConfig = {};
 
