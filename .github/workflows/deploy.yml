@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '24'
 
@@ -25,7 +25,7 @@ jobs:
         run: npx grunt dist
 
       - name: Deploy to Server
-        uses: appleboy/ssh-action@v1.2.4
+        uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
@@ -38,7 +38,7 @@ jobs:
             find /var/www/hackenberg112.de -mindepth 1 -not -path '*/\.*' -delete
 
       - name: Copy files to server
-        uses: appleboy/scp-action@v1.0.0
+        uses: appleboy/scp-action@v1
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
