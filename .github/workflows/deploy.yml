@@ -35,7 +35,7 @@ jobs:
             mkdir -p /var/www/hackenberg112.de
             
             # Alte Dateien löschen (außer versteckte wie .well-known für Let's Encrypt)
-            find /var/www/hackenberg112.de -mindepth 1 -not -path '*/\.*' -delete
+            find /var/www/hackenberg112.de -mindepth 1 -not -path '*/\.*' -not -name 'google*.html' -delete
 
       - name: Copy files to server
         uses: appleboy/scp-action@v1
