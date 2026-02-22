@@ -69,4 +69,8 @@
 
         }]);
 
+    app.run(['$rootScope', function($rootScope) {
+        $rootScope.currentYear = new Date().getFullYear();
+    }]);
+
 })();
