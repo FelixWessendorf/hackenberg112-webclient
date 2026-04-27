@@ -5,19 +5,15 @@
     "type": "git",
     "url": "https://github.com/FelixWessendorf/hackenberg112-webclient.git"
   },
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "npx serve src -l 8080",
+    "preview": "npx serve dist -l 8080"
+  },
   "devDependencies": {
-    "grunt": "^1.6.1",
-    "grunt-contrib-clean": "^2.0.1",
-    "grunt-contrib-concat": "^2.1.0",
-    "grunt-contrib-connect": "^5.0.1",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^5.0.0",
-    "grunt-contrib-htmlmin": "^3.1.0",
-    "grunt-contrib-jshint": "^3.2.0",
-    "grunt-contrib-less": "^3.0.0",
-    "grunt-contrib-uglify": "^5.2.2",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-processhtml": "^0.4.4",
-    "grunt-text-replace": "^0.4.0"
+    "esbuild": "^0.25.0",
+    "html-minifier-terser": "^7.2.0",
+    "less": "^4.2.0"
   }
 }

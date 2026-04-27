@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Build production files
-        run: npx grunt dist
+        run: npm run build
 
       - name: Deploy to Server
         uses: appleboy/ssh-action@v1
